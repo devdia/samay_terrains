@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class TitreController extends Controller
@@ -13,7 +14,8 @@ class TitreController extends Controller
      */
     public function index()
     {
-        //
+        $titres = Titre::all();
+        return view('titres.index', compact('titres'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TitreController extends Controller
      */
     public function create()
     {
-        //
+        return view('titres.create');
     }
 
     /**
@@ -34,7 +36,16 @@ class TitreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'libelle' => 'required|unique:titres|max:50',
+
+        ]);
+
+        $titre = new Titre();
+        $titre->libelle = $request->libelle;
+        $titre->save();
+
+        return redirect()->route('titres.index');
     }
 
     /**

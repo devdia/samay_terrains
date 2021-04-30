@@ -48,8 +48,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('regions.index')}}">Regions</a></li>
-                        <li><a href="#">Departements</a></li>
-                        <li><a href="#">Titre de bails</a></li>
+                        <li><a href="{{route('departements.index')}}">Departements</a></li>
+                        <li><a href="{{route('titres.index')}}">Titre de bails</a></li>
 
 
                     </ul>

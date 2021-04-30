@@ -7,6 +7,7 @@
 <link href="{{ URL::asset('assets/css/icons.min.css')}}" id="icons-style" rel="stylesheet" type="text/css" />
 <!-- App Css-->
 <link href="{{ URL::asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+
 @section('content')
 
 
@@ -22,7 +23,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="libelle">Libelle :</label>
+                                    <label for="libelle">Region :</label>
                                     <input type="text" class="form-control" name="libelle" value="{{old('libelle')}}"
                                            placeholder="Ex. Dakar">
                                     @error('region.*.libelle')
@@ -32,7 +33,7 @@
 
                                 <div class="inner-repeater mb-4">
                                     <div data-repeater-list="departements" class="inner form-group">
-                                        <label>Partie</label>
+                                        <label>Departement</label>
                                         <div data-repeater-item class="inner mb-3 row">
                                             <div class="col-md-8 col-8">
                                                 <input type="text" class="inner form-control" name="departementLibelle"

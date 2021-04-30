@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departement;
+use App\Models\Region;
 use Illuminate\Http\Request;
 
 class DepartementController extends Controller
@@ -13,7 +15,8 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        //
+        $departements = Departement::all();
+        return view('departements.index', compact('departements'));
     }
 
     /**
@@ -23,7 +26,8 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        //
+        $regions = Region::all();
+        return view('departements.create', compact('regions'));
     }
 
     /**
@@ -34,7 +38,17 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'region' => 'required',
+            'departementLibelle' => 'required |max: 50'
+        ]);
+
+        $departement = new Departement();
+        $departement->region_id = $request->region;
+        $departement->libelle = $request->departementLibelle;
+        $departement->save();
+
+        return redirect()->route('departements.index');
     }
 
     /**
