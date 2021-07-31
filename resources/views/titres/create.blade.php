@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h2 class="card-title">Ajout Type d'evaluation</h2>
+                    <h2 class="card-title">Ajout Titre de bail</h2>
                     <form action="{{route('titres.store')}}" method="POST" class="custom-validation">
                         @csrf
 

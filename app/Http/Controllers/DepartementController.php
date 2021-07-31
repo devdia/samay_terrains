@@ -41,6 +41,7 @@ class DepartementController extends Controller
         $request->validate([
             'region' => 'required',
             'departementLibelle' => 'required |max: 50'
+
         ]);
 
         $departement = new Departement();

@@ -3,23 +3,7 @@
 
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="{{url('index')}}" class="logo logo-dark">
-            <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png')}}" alt="" height="22">
-            </span>
-            <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-dark.png')}}" alt="" height="20">
-            </span>
-        </a>
 
-        <a href="{{url('index')}}" class="logo logo-light">
-            <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png')}}" alt="" height="22">
-            </span>
-            <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-light.png')}}" alt="" height="20">
-            </span>
-        </a>
     </div>
 
     <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
@@ -41,35 +25,45 @@
                     </a>
                 </li>
 
+                @if(\Illuminate\Support\Facades\Auth::user()->type == 'admin')
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="uil-window-section"></i>
+                            <span>Parametrage</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{route('regions.index')}}">Regions</a></li>
+                            <li><a href="{{route('departements.index')}}">Departements</a></li>
+                            <li><a href="{{route('titres.index')}}">Titre de bails</a></li>
+
+
+                        </ul>
+                    </li>
+                @endif
+
+
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-window-section"></i>
-                        <span>Parametrage</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('regions.index')}}">Regions</a></li>
-                        <li><a href="{{route('departements.index')}}">Departements</a></li>
-                        <li><a href="{{route('titres.index')}}">Titre de bails</a></li>
-
-
-                    </ul>
-                </li>
-
-
-                <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{route('terrains.index')}}" class="waves-effect">
                         <i class="uil-calender"></i>
                         <span>Terrains</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class=" waves-effect">
+                    <a href="{{route('ventes.index')}}" class=" waves-effect">
                         <i class="uil-comments-alt"></i>
-                        <span class="badge badge-pill badge-warning float-right">New</span>
                         <span>Ventes</span>
                     </a>
                 </li>
+
+                @if(\Illuminate\Support\Facades\Auth::user()->type == 'admin')
+                    <li>
+                        <a href="{{route('utilisateurs.index')}}" class=" waves-effect">
+                            <i class="uil-comments-alt"></i>
+                            <span>Utilisateurs</span>
+                        </a>
+                    </li>
+                @endif
 
 
             </ul>

@@ -15,15 +15,15 @@ class CreateVentesTable extends Migration
     {
         Schema::create('ventes', function (Blueprint $table) {
             $table->id();
-            $table->string('acquereur_prenom');
-            $table->string('acquereur_nom');
+            $table->string('acquereur');
+            $table->string('vendeur');
             $table->foreignId('terrain_id')
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->date('date_cession');
-            $table->integer('prix_cession');
-            $table->integer('marge')->nullable();
+            $table->date('date');
+            $table->integer('prix');
+            $table->float('commission');
             $table->timestamps();
         });
     }

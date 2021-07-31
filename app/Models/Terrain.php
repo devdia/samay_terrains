@@ -9,7 +9,7 @@ class Terrain extends Model
 {
     use HasFactory;
 
-    public function coordinate() {
+    public function coordonate() {
         return $this->belongsTo(Coordonate::class);
     }
 

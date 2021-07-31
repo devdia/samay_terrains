@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-preloader')
 @section('title')
     Ajouter une Region
 @endsection

@@ -40,6 +40,8 @@
     @include('layouts.right-sidebar')
     <!-- /Right-bar -->
 
+        @include('sweetalert::alert')
+
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
     </body>
