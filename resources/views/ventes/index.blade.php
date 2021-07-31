@@ -38,6 +38,9 @@
                                         <li class="list-inline-item">
                                             <a href="{{route('ventes.show', [$vente->id])}}" class="px-2 text-primary" data-toggle="tooltip" data-placement="top" title="Consulter"><i class="far fa-eye font-size-18"></i></a>
                                         </li>
+                                        <li class="list-inline-item">
+                                            <a href="{{route('vente.edit', [$vente->id])}}" class="px-2 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
+                                        </li>
 
 
                                     </ul>

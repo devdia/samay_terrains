@@ -97,7 +97,8 @@ class VenteController extends Controller
     public function edit($id)
     {
         $vente = Vente::find($id);
-        return view('ventes.edit', compact('vente'));
+        $terrain = $vente->terrain;
+        return view('ventes.edit', compact('vente', 'terrain'));
     }
 
     /**
@@ -126,7 +127,7 @@ class VenteController extends Controller
 
         $vente->save();
 
-        return redirect()->route('ventes.index')->withSuccessMessage('La vente de terrain a été modifié avec succès');
+        return redirect()->route('ventes.index');
     }
 
     /**

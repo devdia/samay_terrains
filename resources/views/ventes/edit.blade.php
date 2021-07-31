@@ -16,7 +16,7 @@
                 <div class="card-body">
 
                     <h2 class="card-title">Edition Vente de terrain</h2>
-                    <form action="{{route('ventes.update')}}" method="POST" class="custom-validation">
+                    <form action="{{route('vente.modifier')}}" method="POST" class="custom-validation">
                         @csrf
 
                         <input type="hidden" name="vente" value="{{$vente->id}}">

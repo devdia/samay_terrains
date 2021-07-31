@@ -100,7 +100,7 @@
                             <label for="latitude" class="col-md-2 col-form-label">Latitude</label>
                             <div class="col-md-10">
                                 <input class="form-control" type="text" id="latitude"
-                                       name="latitude" value="{{ $terrain->coordonate->longitude }}" autocomplete="off" required>
+                                       name="latitude" value="{{ $terrain->coordonate->latitude }}" autocomplete="off" required>
                                 @error('latitude')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

@@ -41,7 +41,10 @@ Route::post('terrain/modifier', [\App\Http\Controllers\TerrainController::class,
 Route::resource('ventes', \App\Http\Controllers\VenteController::class);
 Route::get('ventes', [\App\Http\Controllers\VenteController::class, 'index'])->name('ventes.index');
 Route::get('terrain/vendre/{id}', [\App\Http\Controllers\VenteController::class, 'create'])->name('ventes.create');
-
+Route::get('vente/edit/{id}', [\App\Http\Controllers\VenteController::class, 'edit'])
+    ->name('vente.edit');
+Route::post('vente/modifier', [\App\Http\Controllers\VenteController::class, 'update'])
+    ->name('vente.modifier');
 
 //Localiser Terrain
 Route::get('terrain/localiser/{id}', [\App\Http\Controllers\VenteController::class, 'localiser'])->name('ventes.localiser');
